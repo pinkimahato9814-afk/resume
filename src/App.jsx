@@ -60,8 +60,8 @@ function App() {
         <div className="tile tile-about">
           <h2>About Me</h2>
           <p>
-            Passionate about building scalable web apps with modern tech stacks.
-            Optimizing performance and user experience is my priority.
+            Passionate about scalable web apps and <strong>Machine Learning</strong>.
+            I bridge the gap between complex data and intuitive user experiences.
           </p>
         </div>
 
@@ -70,9 +70,9 @@ function App() {
           <h2>What I Do</h2>
           <ul className="service-list">
             <li>💻 Web Development</li>
+            <li>📊 Data Analysis</li>
+            <li>🤖 Machine Learning</li>
             <li>🔌 API Design</li>
-            <li>🎨 UI/UX Implementation</li>
-            <li>🚀 Performance Tuning</li>
           </ul>
         </div>
 
@@ -81,11 +81,11 @@ function App() {
           <h2>Tech Stack</h2>
           <div className="pill-container">
             <span className="pill">⚛️ React</span>
+            <span className="pill">🐍 Python</span>
+            <span className="pill">🐼 Pandas</span>
             <span className="pill">🟢 Node.js</span>
             <span className="pill">🍃 MongoDB</span>
             <span className="pill">🚂 Express</span>
-            <span className="pill">🎨 Tailwind</span>
-            <span className="pill">🔥 Firebase</span>
           </div>
         </div>
 
@@ -95,10 +95,15 @@ function App() {
           <div className="timeline-item">
             <span className="date">2024 - Present</span>
             <h4>Freelance Developer</h4>
-            <p>Building custom MERN stack solutions.</p>
+            <p>Full Stack & Data Analysis solutions.</p>
           </div>
           <div className="timeline-item">
             <span className="date">2023 - 2024</span>
+            <h4>Data Analyst Intern</h4>
+            <p>DataCorp - Python & Visualization.</p>
+          </div>
+          <div className="timeline-item">
+            <span className="date">2022 - 2023</span>
             <h4>Junior Frontend Dev</h4>
             <p>TechCorp Nepal - React & UI/UX.</p>
           </div>
@@ -108,7 +113,7 @@ function App() {
         <div className="tile tile-education">
           <h2>Education</h2>
           <div className="edu-item">
-            <h4>B.Sc. CSIT</h4>
+            <h4>Bachelor in Computer Engineering</h4>
             <p>Tribhuvan University</p>
             <span className="date">2019 - 2023</span>
           </div>
