@@ -1,8 +1,25 @@
+import { useState, useEffect } from "react";
 import "./App.css";
 
 function App() {
+  const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
+  };
+
   return (
     <div className="container">
+      <header className="header-actions">
+        <button onClick={toggleTheme} className="theme-toggle" aria-label="Toggle Dark Mode">
+          {theme === "light" ? "🌙" : "☀️"}
+        </button>
+      </header>
+
       <div className="bento-grid">
         {/* Tile 1: Profile (Large) */}
         <div className="tile tile-profile">
@@ -16,6 +33,9 @@ function App() {
               <h1>Pinki Mahato</h1>
               <p className="role">Full Stack Developer</p>
               <div className="status-badge">🟢 Open to Work</div>
+              <a href="#" className="download-btn" download>
+                📄 Download CV
+              </a>
             </div>
           </div>
         </div>
@@ -45,7 +65,18 @@ function App() {
           </p>
         </div>
 
-        {/* Tile 4: Tech Stack (Visual) */}
+        {/* Tile 4: Services (New) */}
+        <div className="tile tile-services">
+          <h2>What I Do</h2>
+          <ul className="service-list">
+            <li>💻 Web Development</li>
+            <li>🔌 API Design</li>
+            <li>🎨 UI/UX Implementation</li>
+            <li>🚀 Performance Tuning</li>
+          </ul>
+        </div>
+
+        {/* Tile 5: Tech Stack (Visual) */}
         <div className="tile tile-skills">
           <h2>Tech Stack</h2>
           <div className="pill-container">
@@ -58,7 +89,7 @@ function App() {
           </div>
         </div>
 
-        {/* Tile 5: Experience (Timeline) */}
+        {/* Tile 6: Experience (Timeline) */}
         <div className="tile tile-experience">
           <h2>Experience</h2>
           <div className="timeline-item">
@@ -73,7 +104,17 @@ function App() {
           </div>
         </div>
 
-        {/* Tile 6: Projects (Gallery) */}
+        {/* Tile 7: Education (New) */}
+        <div className="tile tile-education">
+          <h2>Education</h2>
+          <div className="edu-item">
+            <h4>B.Sc. CSIT</h4>
+            <p>Tribhuvan University</p>
+            <span className="date">2019 - 2023</span>
+          </div>
+        </div>
+
+        {/* Tile 8: Projects (Gallery) */}
         <div className="tile tile-projects">
           <h2>Recent Projects</h2>
           <div className="project-list">
@@ -88,7 +129,7 @@ function App() {
           </div>
         </div>
 
-        {/* Tile 7: Contact (Action) */}
+        {/* Tile 9: Contact (Action) */}
         <div className="tile tile-contact">
           <h2>Let's Connect</h2>
           <p>pinki@example.com</p>

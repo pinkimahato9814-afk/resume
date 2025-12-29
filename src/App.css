@@ -5,10 +5,33 @@
   padding: 0 20px;
 }
 
+/* Header Actions */
+.header-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.theme-toggle {
+  background: var(--surface);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 1.5rem;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: var(--shadow-md);
+}
+
 .bento-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: auto auto auto;
+  grid-auto-rows: minmax(100px, auto); /* Flexible rows */
   gap: 20px;
 }
 
@@ -37,7 +60,7 @@
 .tile-profile {
   grid-column: span 2;
   grid-row: span 2;
-  background: linear-gradient(145deg, #ffffff, #f0f4ff);
+  background: linear-gradient(145deg, var(--surface), var(--background));
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,6 +79,10 @@
   grid-column: span 2;
 }
 
+.tile-services {
+  grid-column: span 2;
+}
+
 .tile-skills {
   grid-column: span 2;
 }
@@ -63,6 +90,10 @@
 .tile-experience {
   grid-column: span 2;
   grid-row: span 2;
+}
+
+.tile-education {
+  grid-column: span 2;
 }
 
 .tile-projects {
@@ -111,13 +142,30 @@
 
 .status-badge {
   display: inline-block;
-  background: #ecfdf5;
+  background: rgba(167, 243, 208, 0.2);
   color: #059669;
   padding: 6px 12px;
   border-radius: 99px;
   font-size: 0.85rem;
   font-weight: 600;
-  border: 1px solid #a7f3d0;
+  border: 1px solid rgba(167, 243, 208, 0.5);
+}
+
+.download-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background 0.3s;
+}
+
+.download-btn:hover {
+  background: #4338ca;
 }
 
 /* Stats Styling */
@@ -138,6 +186,21 @@
   font-weight: 500;
 }
 
+/* Services Styling */
+.service-list {
+  list-style: none;
+  margin-top: 15px;
+}
+
+.service-list li {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 /* Skills Pills */
 .pill-container {
   display: flex;
@@ -147,7 +210,7 @@
 }
 
 .pill {
-  background: rgba(79, 70, 229, 0.08);
+  background: rgba(79, 70, 229, 0.1);
   color: var(--primary);
   padding: 6px 14px;
   border-radius: 8px;
@@ -192,6 +255,30 @@
   color: var(--text-secondary);
 }
 
+/* Education Styling */
+.edu-item {
+  margin-top: 15px;
+  padding: 15px;
+  background: var(--background);
+  border-radius: 12px;
+}
+
+.edu-item h4 {
+  font-size: 1.1rem;
+  color: var(--text-main);
+}
+
+.edu-item p {
+  color: var(--text-secondary);
+}
+
+.edu-item .date {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  display: block;
+  margin-top: 5px;
+}
+
 /* Projects Mini-Cards */
 .project-list {
   display: flex;
@@ -209,6 +296,7 @@
 .project-card h3 {
   font-size: 1rem;
   margin-bottom: 5px;
+  color: var(--text-main);
 }
 
 .project-card p {
